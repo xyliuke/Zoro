@@ -1,0 +1,799 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1F93E9BB28EB24130059A182 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9BA28EB24130059A182 /* AppDelegate.m */; };
+		1F93E9BE28EB24130059A182 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9BD28EB24130059A182 /* SceneDelegate.m */; };
+		1F93E9C128EB24130059A182 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9C028EB24130059A182 /* ViewController.m */; };
+		1F93E9C728EB24130059A182 /* Zoro.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9C528EB24130059A182 /* Zoro.xcdatamodeld */; };
+		1F93E9C928EB24140059A182 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F93E9C828EB24140059A182 /* Assets.xcassets */; };
+		1F93E9CC28EB24140059A182 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F93E9CA28EB24140059A182 /* LaunchScreen.storyboard */; };
+		1F93E9CF28EB24140059A182 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9CE28EB24140059A182 /* main.m */; };
+		1F93E9D928EB24140059A182 /* ZoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9D828EB24140059A182 /* ZoroTests.m */; };
+		1F93E9E328EB24140059A182 /* ZoroUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E228EB24140059A182 /* ZoroUITests.m */; };
+		1F93E9E528EB24140059A182 /* ZoroUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */; };
+		1F93E9F628EB28530059A182 /* MainNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9F528EB28530059A182 /* MainNavigationView.m */; };
+		2D3D3404B70EA0A7D7CE4CB0 /* Pods_Zoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */; };
+		3A306DEFDF1CB8A9E32F450A /* Pods_ZoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */; };
+		623695AA02AB116357B0D3ED /* MainYUVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6236963D9250ABC450270437 /* MainYUVView.m */; };
+		CB268C8B9C0368C1078AC98E /* Pods_Zoro_ZoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1F93E9D528EB24140059A182 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F93E9AE28EB24130059A182 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F93E9B528EB24130059A182;
+			remoteInfo = Zoro;
+		};
+		1F93E9DF28EB24140059A182 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1F93E9AE28EB24130059A182 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1F93E9B528EB24130059A182;
+			remoteInfo = Zoro;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		05EB4E81801F165D58726120 /* Pods-Zoro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro.debug.xcconfig"; path = "Target Support Files/Pods-Zoro/Pods-Zoro.debug.xcconfig"; sourceTree = "<group>"; };
+		1F93E9B628EB24130059A182 /* Zoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F93E9B928EB24130059A182 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		1F93E9BA28EB24130059A182 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		1F93E9BC28EB24130059A182 /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		1F93E9BD28EB24130059A182 /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		1F93E9BF28EB24130059A182 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1F93E9C028EB24130059A182 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		1F93E9C628EB24130059A182 /* Zoro.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Zoro.xcdatamodel; sourceTree = "<group>"; };
+		1F93E9C828EB24140059A182 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1F93E9CB28EB24140059A182 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1F93E9CD28EB24140059A182 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F93E9CE28EB24140059A182 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		1F93E9D428EB24140059A182 /* ZoroTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZoroTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F93E9D828EB24140059A182 /* ZoroTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoroTests.m; sourceTree = "<group>"; };
+		1F93E9DE28EB24140059A182 /* ZoroUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZoroUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1F93E9E228EB24140059A182 /* ZoroUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoroUITests.m; sourceTree = "<group>"; };
+		1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoroUITestsLaunchTests.m; sourceTree = "<group>"; };
+		1F93E9F128EB24220059A182 /* Zoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zoro.entitlements; sourceTree = "<group>"; };
+		1F93E9F428EB28530059A182 /* MainNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationView.h; sourceTree = "<group>"; };
+		1F93E9F528EB28530059A182 /* MainNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationView.m; sourceTree = "<group>"; };
+		62369499FFE6070758A73326 /* MainYUVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainYUVView.h; sourceTree = "<group>"; };
+		6236963D9250ABC450270437 /* MainYUVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainYUVView.m; sourceTree = "<group>"; };
+		930BD62A7537E21C7A80A757 /* Pods-ZoroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoroTests.release.xcconfig"; path = "Target Support Files/Pods-ZoroTests/Pods-ZoroTests.release.xcconfig"; sourceTree = "<group>"; };
+		992F6FA9916A004A0EF36402 /* Pods-Zoro-ZoroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro-ZoroUITests.release.xcconfig"; path = "Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests.release.xcconfig"; sourceTree = "<group>"; };
+		AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C150C65FC43485D9A6A470C2 /* Pods-ZoroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoroTests.debug.xcconfig"; path = "Target Support Files/Pods-ZoroTests/Pods-ZoroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D7457AEBC26673EBD41491D3 /* Pods-Zoro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro.release.xcconfig"; path = "Target Support Files/Pods-Zoro/Pods-Zoro.release.xcconfig"; sourceTree = "<group>"; };
+		E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoro_ZoroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E6FDE0F39952BD434A27FA79 /* Pods-Zoro-ZoroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro-ZoroUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1F93E9B328EB24130059A182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D3D3404B70EA0A7D7CE4CB0 /* Pods_Zoro.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9D128EB24140059A182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3A306DEFDF1CB8A9E32F450A /* Pods_ZoroTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9DB28EB24140059A182 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB268C8B9C0368C1078AC98E /* Pods_Zoro_ZoroUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0A2AA06596C0F39C8AF25A98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */,
+				E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */,
+				E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		1F93E9AD28EB24130059A182 = {
+			isa = PBXGroup;
+			children = (
+				1F93E9B828EB24130059A182 /* Zoro */,
+				1F93E9D728EB24140059A182 /* ZoroTests */,
+				1F93E9E128EB24140059A182 /* ZoroUITests */,
+				1F93E9B728EB24130059A182 /* Products */,
+				ECC929FDA51DFEBFBE31A8BC /* Pods */,
+				0A2AA06596C0F39C8AF25A98 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		1F93E9B728EB24130059A182 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1F93E9B628EB24130059A182 /* Zoro.app */,
+				1F93E9D428EB24140059A182 /* ZoroTests.xctest */,
+				1F93E9DE28EB24140059A182 /* ZoroUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1F93E9B828EB24130059A182 /* Zoro */ = {
+			isa = PBXGroup;
+			children = (
+				1F93E9F328EB28280059A182 /* Main */,
+				1F93E9F228EB26770059A182 /* Base */,
+				1F93E9F128EB24220059A182 /* Zoro.entitlements */,
+				1F93E9B928EB24130059A182 /* AppDelegate.h */,
+				1F93E9BA28EB24130059A182 /* AppDelegate.m */,
+				1F93E9BC28EB24130059A182 /* SceneDelegate.h */,
+				1F93E9BD28EB24130059A182 /* SceneDelegate.m */,
+				1F93E9BF28EB24130059A182 /* ViewController.h */,
+				1F93E9C028EB24130059A182 /* ViewController.m */,
+				1F93E9C828EB24140059A182 /* Assets.xcassets */,
+				1F93E9CA28EB24140059A182 /* LaunchScreen.storyboard */,
+				1F93E9CD28EB24140059A182 /* Info.plist */,
+				1F93E9CE28EB24140059A182 /* main.m */,
+				1F93E9C528EB24130059A182 /* Zoro.xcdatamodeld */,
+			);
+			path = Zoro;
+			sourceTree = "<group>";
+		};
+		1F93E9D728EB24140059A182 /* ZoroTests */ = {
+			isa = PBXGroup;
+			children = (
+				1F93E9D828EB24140059A182 /* ZoroTests.m */,
+			);
+			path = ZoroTests;
+			sourceTree = "<group>";
+		};
+		1F93E9E128EB24140059A182 /* ZoroUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1F93E9E228EB24140059A182 /* ZoroUITests.m */,
+				1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */,
+			);
+			path = ZoroUITests;
+			sourceTree = "<group>";
+		};
+		1F93E9F228EB26770059A182 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		1F93E9F328EB28280059A182 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1F93E9F428EB28530059A182 /* MainNavigationView.h */,
+				1F93E9F528EB28530059A182 /* MainNavigationView.m */,
+				6236963D9250ABC450270437 /* MainYUVView.m */,
+				62369499FFE6070758A73326 /* MainYUVView.h */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		ECC929FDA51DFEBFBE31A8BC /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				05EB4E81801F165D58726120 /* Pods-Zoro.debug.xcconfig */,
+				D7457AEBC26673EBD41491D3 /* Pods-Zoro.release.xcconfig */,
+				E6FDE0F39952BD434A27FA79 /* Pods-Zoro-ZoroUITests.debug.xcconfig */,
+				992F6FA9916A004A0EF36402 /* Pods-Zoro-ZoroUITests.release.xcconfig */,
+				C150C65FC43485D9A6A470C2 /* Pods-ZoroTests.debug.xcconfig */,
+				930BD62A7537E21C7A80A757 /* Pods-ZoroTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1F93E9B528EB24130059A182 /* Zoro */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F93E9E828EB24140059A182 /* Build configuration list for PBXNativeTarget "Zoro" */;
+			buildPhases = (
+				6DB3BE58E65683DAC5847ECF /* [CP] Check Pods Manifest.lock */,
+				1F93E9B228EB24130059A182 /* Sources */,
+				1F93E9B328EB24130059A182 /* Frameworks */,
+				1F93E9B428EB24130059A182 /* Resources */,
+				D4209BF2D6AADA9AE3BBE0E4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Zoro;
+			productName = Zoro;
+			productReference = 1F93E9B628EB24130059A182 /* Zoro.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1F93E9D328EB24140059A182 /* ZoroTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F93E9EB28EB24140059A182 /* Build configuration list for PBXNativeTarget "ZoroTests" */;
+			buildPhases = (
+				3DA4BBBF66AC5C975A0476F1 /* [CP] Check Pods Manifest.lock */,
+				1F93E9D028EB24140059A182 /* Sources */,
+				1F93E9D128EB24140059A182 /* Frameworks */,
+				1F93E9D228EB24140059A182 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F93E9D628EB24140059A182 /* PBXTargetDependency */,
+			);
+			name = ZoroTests;
+			productName = ZoroTests;
+			productReference = 1F93E9D428EB24140059A182 /* ZoroTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1F93E9DD28EB24140059A182 /* ZoroUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1F93E9EE28EB24140059A182 /* Build configuration list for PBXNativeTarget "ZoroUITests" */;
+			buildPhases = (
+				B9B88DBE5BF6440CB917A5EE /* [CP] Check Pods Manifest.lock */,
+				1F93E9DA28EB24140059A182 /* Sources */,
+				1F93E9DB28EB24140059A182 /* Frameworks */,
+				1F93E9DC28EB24140059A182 /* Resources */,
+				C4B983458F68384390E92FA4 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1F93E9E028EB24140059A182 /* PBXTargetDependency */,
+			);
+			name = ZoroUITests;
+			productName = ZoroUITests;
+			productReference = 1F93E9DE28EB24140059A182 /* ZoroUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1F93E9AE28EB24130059A182 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1340;
+				TargetAttributes = {
+					1F93E9B528EB24130059A182 = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
+					1F93E9D328EB24140059A182 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 1F93E9B528EB24130059A182;
+					};
+					1F93E9DD28EB24140059A182 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 1F93E9B528EB24130059A182;
+					};
+				};
+			};
+			buildConfigurationList = 1F93E9B128EB24130059A182 /* Build configuration list for PBXProject "Zoro" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1F93E9AD28EB24130059A182;
+			productRefGroup = 1F93E9B728EB24130059A182 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1F93E9B528EB24130059A182 /* Zoro */,
+				1F93E9D328EB24140059A182 /* ZoroTests */,
+				1F93E9DD28EB24140059A182 /* ZoroUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1F93E9B428EB24130059A182 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F93E9CC28EB24140059A182 /* LaunchScreen.storyboard in Resources */,
+				1F93E9C928EB24140059A182 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9D228EB24140059A182 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9DC28EB24140059A182 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3DA4BBBF66AC5C975A0476F1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZoroTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6DB3BE58E65683DAC5847ECF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zoro-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B9B88DBE5BF6440CB917A5EE /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Zoro-ZoroUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C4B983458F68384390E92FA4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D4209BF2D6AADA9AE3BBE0E4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1F93E9B228EB24130059A182 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F93E9CF28EB24140059A182 /* main.m in Sources */,
+				1F93E9C128EB24130059A182 /* ViewController.m in Sources */,
+				1F93E9BB28EB24130059A182 /* AppDelegate.m in Sources */,
+				1F93E9F628EB28530059A182 /* MainNavigationView.m in Sources */,
+				1F93E9BE28EB24130059A182 /* SceneDelegate.m in Sources */,
+				1F93E9C728EB24130059A182 /* Zoro.xcdatamodeld in Sources */,
+				623695AA02AB116357B0D3ED /* MainYUVView.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9D028EB24140059A182 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F93E9D928EB24140059A182 /* ZoroTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1F93E9DA28EB24140059A182 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F93E9E528EB24140059A182 /* ZoroUITestsLaunchTests.m in Sources */,
+				1F93E9E328EB24140059A182 /* ZoroUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1F93E9D628EB24140059A182 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F93E9B528EB24130059A182 /* Zoro */;
+			targetProxy = 1F93E9D528EB24140059A182 /* PBXContainerItemProxy */;
+		};
+		1F93E9E028EB24140059A182 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1F93E9B528EB24130059A182 /* Zoro */;
+			targetProxy = 1F93E9DF28EB24140059A182 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1F93E9CA28EB24140059A182 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F93E9CB28EB24140059A182 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1F93E9E628EB24140059A182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		1F93E9E728EB24140059A182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1F93E9E928EB24140059A182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 05EB4E81801F165D58726120 /* Pods-Zoro.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zoro/Zoro.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Zoro/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Zoro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "2,6";
+			};
+			name = Debug;
+		};
+		1F93E9EA28EB24140059A182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D7457AEBC26673EBD41491D3 /* Pods-Zoro.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Zoro/Zoro.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Zoro/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Zoro;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				TARGETED_DEVICE_FAMILY = "2,6";
+			};
+			name = Release;
+		};
+		1F93E9EC28EB24140059A182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C150C65FC43485D9A6A470C2 /* Pods-ZoroTests.debug.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZoroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoro.app/Zoro";
+			};
+			name = Debug;
+		};
+		1F93E9ED28EB24140059A182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 930BD62A7537E21C7A80A757 /* Pods-ZoroTests.release.xcconfig */;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZoroTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Zoro.app/Zoro";
+			};
+			name = Release;
+		};
+		1F93E9EF28EB24140059A182 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = E6FDE0F39952BD434A27FA79 /* Pods-Zoro-ZoroUITests.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZoroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zoro;
+			};
+			name = Debug;
+		};
+		1F93E9F028EB24140059A182 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 992F6FA9916A004A0EF36402 /* Pods-Zoro-ZoroUITests.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 35UCJZSCCT;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ZoroUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Zoro;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1F93E9B128EB24130059A182 /* Build configuration list for PBXProject "Zoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F93E9E628EB24140059A182 /* Debug */,
+				1F93E9E728EB24140059A182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F93E9E828EB24140059A182 /* Build configuration list for PBXNativeTarget "Zoro" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F93E9E928EB24140059A182 /* Debug */,
+				1F93E9EA28EB24140059A182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F93E9EB28EB24140059A182 /* Build configuration list for PBXNativeTarget "ZoroTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F93E9EC28EB24140059A182 /* Debug */,
+				1F93E9ED28EB24140059A182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1F93E9EE28EB24140059A182 /* Build configuration list for PBXNativeTarget "ZoroUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1F93E9EF28EB24140059A182 /* Debug */,
+				1F93E9F028EB24140059A182 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1F93E9C528EB24130059A182 /* Zoro.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1F93E9C628EB24130059A182 /* Zoro.xcdatamodel */,
+			);
+			currentVersion = 1F93E9C628EB24130059A182 /* Zoro.xcdatamodel */;
+			path = Zoro.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1F93E9AE28EB24130059A182 /* Project object */;
+}
