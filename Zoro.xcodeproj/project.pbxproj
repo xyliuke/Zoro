@@ -17,10 +17,16 @@
 		1F93E9D928EB24140059A182 /* ZoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9D828EB24140059A182 /* ZoroTests.m */; };
 		1F93E9E328EB24140059A182 /* ZoroUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E228EB24140059A182 /* ZoroUITests.m */; };
 		1F93E9E528EB24140059A182 /* ZoroUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */; };
-		1F93E9F628EB28530059A182 /* MainNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9F528EB28530059A182 /* MainNavigationView.m */; };
 		2D3D3404B70EA0A7D7CE4CB0 /* Pods_Zoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */; };
 		3A306DEFDF1CB8A9E32F450A /* Pods_ZoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */; };
-		623695AA02AB116357B0D3ED /* MainYUVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6236963D9250ABC450270437 /* MainYUVView.m */; };
+		623692843437B3B6C3632D1F /* MainYUVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369233A6688CAC1E5FE3DD /* MainYUVView.m */; };
+		623693DDFBF83C170632E971 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369497B2872BA9FA7B7A0E /* NavigationViewController.m */; };
+		62369799C5B387CA16E3FCC6 /* UILabel+Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 623690F9F7917EAD7DD34251 /* UILabel+Simple.m */; };
+		6236979D92CB8BFA4B4FF318 /* MacOpenPanel.m in Sources */ = {isa = PBXBuildFile; fileRef = 6236909A6BFA00A4C6FFE0F1 /* MacOpenPanel.m */; };
+		62369A52076A3D888AC1F439 /* UIButton+Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369804EA5287A7AE645AB2 /* UIButton+Simple.m */; };
+		62369C5245F201445ED3D053 /* YUVConvertor.m in Sources */ = {isa = PBXBuildFile; fileRef = 623691060190C0766413CA8C /* YUVConvertor.m */; };
+		62369DC01F7C7FDCF59942EC /* YUVTypeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 623694D3C92877366411907E /* YUVTypeCollectionView.m */; };
+		62369DD0F30F9FA6811DCA3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369F2FEBCD9C53B0C2EB33 /* DetailViewController.m */; };
 		CB268C8B9C0368C1078AC98E /* Pods_Zoro_ZoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,10 +67,23 @@
 		1F93E9E228EB24140059A182 /* ZoroUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoroUITests.m; sourceTree = "<group>"; };
 		1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoroUITestsLaunchTests.m; sourceTree = "<group>"; };
 		1F93E9F128EB24220059A182 /* Zoro.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Zoro.entitlements; sourceTree = "<group>"; };
-		1F93E9F428EB28530059A182 /* MainNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MainNavigationView.h; sourceTree = "<group>"; };
-		1F93E9F528EB28530059A182 /* MainNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MainNavigationView.m; sourceTree = "<group>"; };
-		62369499FFE6070758A73326 /* MainYUVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainYUVView.h; sourceTree = "<group>"; };
-		6236963D9250ABC450270437 /* MainYUVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainYUVView.m; sourceTree = "<group>"; };
+		6236904D9514916003A88E18 /* UIButton+Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Simple.h"; sourceTree = "<group>"; };
+		623690978239847EA9E2173C /* UILabel+Simple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+Simple.h"; sourceTree = "<group>"; };
+		6236909A6BFA00A4C6FFE0F1 /* MacOpenPanel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MacOpenPanel.m; sourceTree = "<group>"; };
+		623690F9F7917EAD7DD34251 /* UILabel+Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+Simple.m"; sourceTree = "<group>"; };
+		623691060190C0766413CA8C /* YUVConvertor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUVConvertor.m; sourceTree = "<group>"; };
+		62369233A6688CAC1E5FE3DD /* MainYUVView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainYUVView.m; sourceTree = "<group>"; };
+		623692DF465D5C0BC83C013B /* DetailViewControllerDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewControllerDelegate.h; sourceTree = "<group>"; };
+		62369497B2872BA9FA7B7A0E /* NavigationViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NavigationViewController.m; sourceTree = "<group>"; };
+		623694AC7AD952F0AA3E687F /* NavigationViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NavigationViewController.h; sourceTree = "<group>"; };
+		623694D3C92877366411907E /* YUVTypeCollectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YUVTypeCollectionView.m; sourceTree = "<group>"; };
+		62369503071143E9BF39B6B6 /* YUVTypeCollectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUVTypeCollectionView.h; sourceTree = "<group>"; };
+		62369771E3FF3AE4762EAB42 /* YUVConvertor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YUVConvertor.h; sourceTree = "<group>"; };
+		623697EF29283C17D199E68D /* MacOpenPanel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MacOpenPanel.h; sourceTree = "<group>"; };
+		62369804EA5287A7AE645AB2 /* UIButton+Simple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Simple.m"; sourceTree = "<group>"; };
+		62369A41D078910924C60CCA /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		62369B3E5271DA7C92AE79B8 /* MainYUVView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainYUVView.h; sourceTree = "<group>"; };
+		62369F2FEBCD9C53B0C2EB33 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		930BD62A7537E21C7A80A757 /* Pods-ZoroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoroTests.release.xcconfig"; path = "Target Support Files/Pods-ZoroTests/Pods-ZoroTests.release.xcconfig"; sourceTree = "<group>"; };
 		992F6FA9916A004A0EF36402 /* Pods-Zoro-ZoroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro-ZoroUITests.release.xcconfig"; path = "Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests.release.xcconfig"; sourceTree = "<group>"; };
 		AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -152,6 +171,10 @@
 				1F93E9CD28EB24140059A182 /* Info.plist */,
 				1F93E9CE28EB24140059A182 /* main.m */,
 				1F93E9C528EB24130059A182 /* Zoro.xcdatamodeld */,
+				6236975B4A76D01132B1A25E /* MacCatalyst */,
+				62369F36D9008062B40E2AC4 /* Bridge */,
+				6236956B5FAC9186F93AA33A /* Extension */,
+				62369438CF485A8BA4CF5047 /* YUV_UI */,
 			);
 			path = Zoro;
 			sourceTree = "<group>";
@@ -176,6 +199,8 @@
 		1F93E9F228EB26770059A182 /* Base */ = {
 			isa = PBXGroup;
 			children = (
+				623691060190C0766413CA8C /* YUVConvertor.m */,
+				62369771E3FF3AE4762EAB42 /* YUVConvertor.h */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -183,12 +208,51 @@
 		1F93E9F328EB28280059A182 /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				1F93E9F428EB28530059A182 /* MainNavigationView.h */,
-				1F93E9F528EB28530059A182 /* MainNavigationView.m */,
-				6236963D9250ABC450270437 /* MainYUVView.m */,
-				62369499FFE6070758A73326 /* MainYUVView.h */,
+				62369497B2872BA9FA7B7A0E /* NavigationViewController.m */,
+				623694AC7AD952F0AA3E687F /* NavigationViewController.h */,
+				62369F2FEBCD9C53B0C2EB33 /* DetailViewController.m */,
+				62369A41D078910924C60CCA /* DetailViewController.h */,
+				623692DF465D5C0BC83C013B /* DetailViewControllerDelegate.h */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		62369438CF485A8BA4CF5047 /* YUV_UI */ = {
+			isa = PBXGroup;
+			children = (
+				62369B3E5271DA7C92AE79B8 /* MainYUVView.h */,
+				62369233A6688CAC1E5FE3DD /* MainYUVView.m */,
+				623694D3C92877366411907E /* YUVTypeCollectionView.m */,
+				62369503071143E9BF39B6B6 /* YUVTypeCollectionView.h */,
+			);
+			path = YUV_UI;
+			sourceTree = "<group>";
+		};
+		6236956B5FAC9186F93AA33A /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				623690F9F7917EAD7DD34251 /* UILabel+Simple.m */,
+				623690978239847EA9E2173C /* UILabel+Simple.h */,
+				62369804EA5287A7AE645AB2 /* UIButton+Simple.m */,
+				6236904D9514916003A88E18 /* UIButton+Simple.h */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		6236975B4A76D01132B1A25E /* MacCatalyst */ = {
+			isa = PBXGroup;
+			children = (
+				6236909A6BFA00A4C6FFE0F1 /* MacOpenPanel.m */,
+				623697EF29283C17D199E68D /* MacOpenPanel.h */,
+			);
+			path = MacCatalyst;
+			sourceTree = "<group>";
+		};
+		62369F36D9008062B40E2AC4 /* Bridge */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Bridge;
 			sourceTree = "<group>";
 		};
 		ECC929FDA51DFEBFBE31A8BC /* Pods */ = {
@@ -444,10 +508,16 @@
 				1F93E9CF28EB24140059A182 /* main.m in Sources */,
 				1F93E9C128EB24130059A182 /* ViewController.m in Sources */,
 				1F93E9BB28EB24130059A182 /* AppDelegate.m in Sources */,
-				1F93E9F628EB28530059A182 /* MainNavigationView.m in Sources */,
 				1F93E9BE28EB24130059A182 /* SceneDelegate.m in Sources */,
 				1F93E9C728EB24130059A182 /* Zoro.xcdatamodeld in Sources */,
-				623695AA02AB116357B0D3ED /* MainYUVView.m in Sources */,
+				623693DDFBF83C170632E971 /* NavigationViewController.m in Sources */,
+				62369DD0F30F9FA6811DCA3C /* DetailViewController.m in Sources */,
+				6236979D92CB8BFA4B4FF318 /* MacOpenPanel.m in Sources */,
+				62369799C5B387CA16E3FCC6 /* UILabel+Simple.m in Sources */,
+				62369A52076A3D888AC1F439 /* UIButton+Simple.m in Sources */,
+				623692843437B3B6C3632D1F /* MainYUVView.m in Sources */,
+				62369DC01F7C7FDCF59942EC /* YUVTypeCollectionView.m in Sources */,
+				62369C5245F201445ED3D053 /* YUVConvertor.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

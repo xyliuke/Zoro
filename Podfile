@@ -8,6 +8,9 @@ target 'Zoro' do
   # Pods for Zoro
   pod 'Masonry'
   pod 'YYCategories'
+  pod 'LookinServer'
+  # pod 'QMUIKit'
+
   target 'ZoroTests' do
     inherit! :search_paths
     # Pods for testing

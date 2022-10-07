@@ -63,5 +63,8 @@
     [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
 
+- (void)scene:(UIScene *)scene openURLContexts:(NSSet<UIOpenURLContext *> *)urlContexts {
+
+}
 
 @end
