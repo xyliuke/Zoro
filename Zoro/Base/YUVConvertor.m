@@ -9,6 +9,19 @@
 @implementation YUVConvertor {
 
 }
++ (NSData *)i420ToNV12:(NSData *)data {
+    NSMutableData *ret = [[NSMutableData alloc] initWithCapacity:data.length];
+    NSUInteger yLength = (NSUInteger)(data.length / 1.5);
+    [ret appendData:[data subdataWithRange:NSMakeRange(0, yLength)]];
+    NSUInteger uLength = yLength / 4;
+    NSData *uData = [data subdataWithRange:NSMakeRange(yLength, uLength)];
+    NSData *vData = [data subdataWithRange:NSMakeRange(yLength + uLength, uLength)];
+    for (int i = 0; i < uLength; ++i) {
+        [ret appendData:[uData subdataWithRange:NSMakeRange(i, 1)]];
+        [ret appendData:[vData subdataWithRange:NSMakeRange(i, 1)]];
+    }
+    return ret;
+}
 
 + (CVPixelBufferRef)pixelBufferFromImage:(UIImage *)image {
     return [self pixelBufferFromCGImage:image.CGImage pixelFormatType:kCVPixelFormatType_32BGRA resizeSize:image.size];

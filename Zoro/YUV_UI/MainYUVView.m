@@ -181,11 +181,12 @@
     if (!_openPreviewButton) {
         _openPreviewButton = [UIButton buttonWithText:@"预览" fontSize:14 textColorName:nil event:^(UIButton *sender) {
             NSData *data = [NSData dataWithContentsOfURL:self.openFilePath];
+            NSData *nv12Data = [YUVConvertor i420ToNV12:data];
             NSUInteger w = [self.widthView.text unsignedIntegerValue];
             NSUInteger h = [self.heightView.text unsignedIntegerValue];
             if (data.length <= w * h * 4) {
                 //是图片
-                CVPixelBufferRef pixelBuffer = [YUVConvertor createCVPixelBufferRefFromNV12Buffer:[data bytes] width:w height:h];
+                CVPixelBufferRef pixelBuffer = [YUVConvertor createCVPixelBufferRefFromNV12Buffer:[nv12Data bytes] width:w height:h];
                 UIImage *image = [YUVConvertor imageFromPixelBuffer:pixelBuffer];
                 CVPixelBufferRelease(pixelBuffer);
                 self.previewImageView.image = image;
