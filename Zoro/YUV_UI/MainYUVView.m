@@ -181,14 +181,11 @@
     if (!_openPreviewButton) {
         _openPreviewButton = [UIButton buttonWithText:@"预览" fontSize:14 textColorName:nil event:^(UIButton *sender) {
             NSData *data = [NSData dataWithContentsOfURL:self.openFilePath];
-            NSData *nv12Data = [YUVConvertor i420ToNV12:data];
             NSUInteger w = [self.widthView.text unsignedIntegerValue];
             NSUInteger h = [self.heightView.text unsignedIntegerValue];
             if (data.length <= w * h * 4) {
                 //是图片
-                CVPixelBufferRef pixelBuffer = [YUVConvertor createCVPixelBufferRefFromNV12Buffer:[nv12Data bytes] width:w height:h];
-                UIImage *image = [YUVConvertor imageFromPixelBuffer:pixelBuffer];
-                CVPixelBufferRelease(pixelBuffer);
+                UIImage *image = [self convertYUVToImage:data width:w height:h];
                 self.previewImageView.image = image;
                 self.previewImageView.hidden = NO;
 
@@ -220,11 +217,15 @@
         data1.selected = YES;
 
         YUVTypeData *data2 = [YUVTypeData new];
-        data2.tag = @"YV12";
-        data2.text = @"YV12";
+        data2.tag = @"NV12";
+        data2.text = @"NV12";
+
+        YUVTypeData *data3 = [YUVTypeData new];
+        data3.tag = @"NV21";
+        data3.text = @"NV21";
 
         self.selectedYUVType = data1;
-        _yuvTypeView.data = @[data1, data2];
+        _yuvTypeView.data = @[data1, data2, data3];
     }
     return _yuvTypeView;
 }
@@ -292,6 +293,17 @@
         _previewImageView.contentMode = UIViewContentModeScaleAspectFit;
     }
     return _previewImageView;
+}
+
+- (UIImage *)convertYUVToImage:(NSData *)data width:(int)width height:(int)height {
+    if ([@"i420" isEqualToString: self.selectedYUVType.tag]) {
+        return [YUVConvertor createImageFromBuffer:data type:I420 width:width height:height];
+    } else if ([@"NV12" isEqualToString:self.selectedYUVType.tag]) {
+        return [YUVConvertor createImageFromBuffer:data type:NV12 width:width height:height];
+    } else if ([@"NV21" isEqualToString:self.selectedYUVType.tag]) {
+        return [YUVConvertor createImageFromBuffer:data type:NV21 width:width height:height];
+    }
+    return nil;
 }
 
 @end
