@@ -147,60 +147,85 @@ static uint32_t bitmapInfoWithPixelFormatTypeTTLive(OSType inputPixelFormat, boo
     }
 }
 
-+ (UIImage *)createImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(int)width height:(int)height {
-    CVPixelBufferRef pixelBuffer = [self createCVPixelBufferRefFromBuffer:buffer type:type width:width height:height];
++ (UIImage *)createImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height {
+    return [self createImageFromBuffer:buffer type:type width:width height:height enableY:YES enableU:YES enableV:YES];
+}
+
++ (UIImage *)createImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height enableY:(BOOL)enableY enableU:(BOOL)enableU enableV:(BOOL)enableV {
+    CVPixelBufferRef pixelBuffer = [self createCVPixelBufferRefFromBuffer:buffer type:type width:width height:height enableY:enableY enableU:enableU enableV:enableV];
     UIImage *image = [self imageFromPixelBuffer:pixelBuffer];
     CVPixelBufferRelease(pixelBuffer);
     return image;
 }
 
-+ (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(int)width height:(int)height {
-    NSData *nv12Data = [self yuvToNV12:buffer type:type];
-    return [self createCVPixelBufferRefFromNV12Buffer:[nv12Data bytes] width:width height:height];
++ (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height {
+    return [self createCVPixelBufferRefFromBuffer:buffer type:type width:width height:height enableY:YES enableU:YES enableV:YES];
 }
 
++ (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height enableY:(BOOL)enableY enableU:(BOOL)enableU enableV:(BOOL)enableV {
+    NSData *nv12Data = [self yuvToNV12:buffer type:type];
+    return [self createCVPixelBufferRefFromNV12Buffer:(unsigned char *)[nv12Data bytes] width:width height:height enableY:enableY enableU:enableU enableV:enableV];
+}
 
-+ (CVPixelBufferRef)createCVPixelBufferRefFromNV12Buffer:(unsigned char *)buffer width:(int)width height:(int)height {
++ (CVPixelBufferRef)createCVPixelBufferRefFromNV12Buffer:(unsigned char *)buffer width:(NSUInteger)width height:(NSUInteger)height enableY:(BOOL)enableY enableU:(BOOL)enableU enableV:(BOOL)enableV {
     NSDictionary *pixelAttributes = @{(NSString*)kCVPixelBufferIOSurfacePropertiesKey:@{}};
-    
+
     CVPixelBufferRef pixelBuffer = NULL;
-    
+
     CVReturn result = CVPixelBufferCreate(kCFAllocatorDefault,
-                                          width,
-                                          height,
-                                          kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
-                                          (__bridge CFDictionaryRef)(pixelAttributes),
-                                          &pixelBuffer);//kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange,
-    
+            width,
+            height,
+            kCVPixelFormatType_420YpCbCr8BiPlanarFullRange,
+            (__bridge CFDictionaryRef)(pixelAttributes),
+            &pixelBuffer);//kCVPixelFormatType_420YpCbCr8BiPlanarVideoRange,
+
     CVPixelBufferLockBaseAddress(pixelBuffer,0);
     unsigned char *yDestPlane = (unsigned char *)CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 0);
-    
+
     // Here y_ch0 is Y-Plane of YUV(NV12) data.
     unsigned char *y_ch0 = buffer;
     size_t yHeight = CVPixelBufferGetHeightOfPlane(pixelBuffer, 0);
     size_t yStride = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 0);
     for (int i = 0; i< yHeight; i ++) {
         memset(yDestPlane + i * yStride, 0, yStride);
-        memcpy(yDestPlane + i * yStride, y_ch0 + i * width, width);
+        if (enableY) {
+            memcpy(yDestPlane + i * yStride, y_ch0 + i * width, width);
+        }
     }
     unsigned char *uvDestPlane = (unsigned char *)CVPixelBufferGetBaseAddressOfPlane(pixelBuffer, 1);
-    
+
     unsigned char *y_ch1 = buffer + width * height;
     // Here y_ch1 is UV-Plane of YUV(NV12) data.
     size_t uvHeight = CVPixelBufferGetHeightOfPlane(pixelBuffer, 1);
     size_t uvStride = CVPixelBufferGetBytesPerRowOfPlane(pixelBuffer, 1);
-    
+
     for (int i = 0; i< uvHeight; i ++) {
         memset(uvDestPlane + i * uvStride, 0, uvStride);
-        memcpy(uvDestPlane + i * uvStride, y_ch1 + i * width, width);
+        if (enableU && enableV) {
+            memcpy(uvDestPlane + i * uvStride, y_ch1 + i * width, width);
+        } else if (enableU) {
+            for (int j = 0; j < width; j += 2) {
+                memcpy(uvDestPlane + i * uvStride + j, y_ch1 + i * width + j, 1);
+            }
+        } else if (enableV) {
+            for (int j = 1; j < width; j += 2) {
+                memcpy(uvDestPlane + i * uvStride + j, y_ch1 + i * width + j, 1);
+            }
+        }
+        
     }
-    
+
     CVPixelBufferUnlockBaseAddress(pixelBuffer, 0);
-    
+
     if (result != kCVReturnSuccess) {
         NSLog(@"Unable to create cvpixelbuffer %d", result);
     }
     return pixelBuffer;
+}
+
+
++ (CVPixelBufferRef)createCVPixelBufferRefFromNV12Buffer:(unsigned char *)buffer width:(NSUInteger)width height:(NSUInteger)height {
+    return [self createCVPixelBufferRefFromNV12Buffer:buffer width:width height:height enableY:YES enableU:YES enableV:YES];
 }
 
 + (UIImage *)imageFromPixelBuffer:(CVPixelBufferRef)pixelBuffer {

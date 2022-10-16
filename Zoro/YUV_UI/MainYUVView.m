@@ -8,7 +8,8 @@
 #import "UILabel+Simple.h"
 #import "UIButton+Simple.h"
 #import "YUVTypeCollectionView.h"
-#import "YUVConvertor.h"
+#import "YUVSettingView.h"
+#import <AVBase/YUVConvertor.h>
 #include <YYCategories/YYCategories.h>
 
 @interface MainYUVView()
@@ -19,13 +20,14 @@
 @property (nonatomic, strong) NSURL *openFilePath;
 @property (nonatomic, strong) YUVTypeCollectionView *yuvTypeView;
 @property (nonatomic, strong) YUVTypeData *selectedYUVType;
-@property (nonatomic, strong) UIView *inputWrapView;
-@property (nonatomic, strong) UILabel *widthLabel;
-@property (nonatomic, strong) UITextField *widthView;
-@property (nonatomic, strong) UILabel *heightLabel;
-@property (nonatomic, strong) UITextField *heightView;
+@property (nonatomic, strong) YUVSettingView *inputSettingView;
+
 @property (nonatomic, strong) UIView *previewView;
 @property (nonatomic, strong) UIImageView *previewImageView;
+
+@property (nonatomic) BOOL enableY;
+@property (nonatomic) BOOL enableU;
+@property (nonatomic) BOOL enableV;
 @end
 
 @implementation MainYUVView {
@@ -35,6 +37,9 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
+        self.enableY = YES;
+        self.enableU = YES;
+        self.enableV = YES;
         [self setupUI];
     }
 
@@ -83,8 +88,8 @@
         make.width.equalTo(@320);
     }];
 
-    [self.settingView addSubview:self.inputWrapView];
-    [self.inputWrapView mas_makeConstraints:^(MASConstraintMaker *make) {
+    [self.settingView addSubview:self.inputSettingView];
+    [self.inputSettingView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.right.equalTo(self.settingView).offset(-16);
         make.top.equalTo(self.settingView).offset(16);
         make.left.equalTo(self.yuvTypeView.mas_right).offset(8);
@@ -92,33 +97,7 @@
         make.width.equalTo(@320);
     }];
 
-    [self.inputWrapView addSubview:self.widthLabel];
-    [self.inputWrapView addSubview:self.widthView];
-    [self.widthLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.inputWrapView).offset(16);
-        make.top.equalTo(self.inputWrapView).offset(8);
-        make.width.equalTo(@40);
-    }];
-    [self.widthView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.widthLabel.mas_right).offset(6);
-        make.centerY.equalTo(self.widthLabel);
-        make.width.equalTo(@60);
-        make.height.equalTo(@24);
-    }];
 
-    [self.inputWrapView addSubview:self.heightLabel];
-    [self.inputWrapView addSubview:self.heightView];
-    [self.heightLabel mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.widthView.mas_right).offset(16);
-        make.centerY.equalTo(self.widthLabel);
-        make.width.equalTo(@40);
-    }];
-    [self.heightView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.heightLabel.mas_right).offset(6);
-        make.centerY.equalTo(self.heightLabel);
-        make.width.equalTo(@60);
-        make.height.equalTo(@24);
-    }];
 
     [self addSubview:self.previewView];
     [self.previewView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -180,18 +159,7 @@
 - (UIButton *)openPreviewButton {
     if (!_openPreviewButton) {
         _openPreviewButton = [UIButton buttonWithText:@"预览" fontSize:14 textColorName:nil event:^(UIButton *sender) {
-            NSData *data = [NSData dataWithContentsOfURL:self.openFilePath];
-            NSUInteger w = [self.widthView.text unsignedIntegerValue];
-            NSUInteger h = [self.heightView.text unsignedIntegerValue];
-            if (data.length <= w * h * 4) {
-                //是图片
-                UIImage *image = [self convertYUVToImage:data width:w height:h];
-                self.previewImageView.image = image;
-                self.previewImageView.hidden = NO;
-
-            } else if (data.length > w * h) {
-                //是视频
-            }
+            [self previewYUV];
         }];
     }
     return _openPreviewButton;
@@ -230,55 +198,22 @@
     return _yuvTypeView;
 }
 
-- (UIView *)inputWrapView {
-    if (!_inputWrapView) {
-        _inputWrapView = [UIView new];
-        _inputWrapView.layer.masksToBounds = YES;
-        _inputWrapView.layer.cornerRadius = 4;
-        _inputWrapView.layer.borderColor = [UIColor colorNamed:@"button_bg_color"].CGColor;
-        _inputWrapView.layer.borderWidth = 0.5;
+- (YUVSettingView *)inputSettingView {
+    if (!_inputSettingView) {
+        _inputSettingView = [YUVSettingView new];
+        @weakify(self)
+        _inputSettingView.yuvPartChanged = ^(YUVSettingView *view, BOOL y, BOOL u, BOOL v) {
+            @strongify(self)
+            self.enableY = y;
+            self.enableU = u;
+            self.enableV = v;
+            [self previewYUV];
+        };
     }
-    return _inputWrapView;
+    return _inputSettingView;
 }
 
-- (UILabel *)widthLabel {
-    if (!_widthLabel) {
-        _widthLabel = [UILabel labelWithText:@"宽度:" fontSize:14 textColorName:nil];
-    }
-    return _widthLabel;
-}
 
-- (UILabel *)heightLabel {
-    if (!_heightLabel) {
-        _heightLabel = [UILabel labelWithText:@"高度:" fontSize:14];
-    }
-    return _heightLabel;
-}
-
-- (UITextField *)widthView {
-    if (!_widthView) {
-        _widthView = [UITextField new];
-        _widthView.textAlignment = NSTextAlignmentRight;
-        _widthView.keyboardType = UIKeyboardTypeNamePhonePad;
-        _widthView.layer.masksToBounds = YES;
-        _widthView.layer.cornerRadius = 4;
-        _widthView.layer.borderColor = [UIColor colorNamed:@"button_bg_color"].CGColor;
-        _widthView.layer.borderWidth = 0.5;
-    }
-    return _widthView;
-}
-
-- (UITextField *)heightView {
-    if (!_heightView) {
-        _heightView = [UITextField new];
-        _heightView.textAlignment = NSTextAlignmentRight;
-        _heightView.layer.masksToBounds = YES;
-        _heightView.layer.cornerRadius = 4;
-        _heightView.layer.borderColor = [UIColor colorNamed:@"button_bg_color"].CGColor;
-        _heightView.layer.borderWidth = 0.5;
-    }
-    return _heightView;
-}
 
 - (UIView *)previewView {
     if (!_previewView) {
@@ -295,15 +230,30 @@
     return _previewImageView;
 }
 
-- (UIImage *)convertYUVToImage:(NSData *)data width:(int)width height:(int)height {
+- (UIImage *)convertYUVToImage:(NSData *)data width:(NSUInteger)width height:(NSUInteger)height {
     if ([@"i420" isEqualToString: self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:I420 width:width height:height];
+        return [YUVConvertor createImageFromBuffer:data type:I420 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
     } else if ([@"NV12" isEqualToString:self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:NV12 width:width height:height];
+        return [YUVConvertor createImageFromBuffer:data type:NV12 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
     } else if ([@"NV21" isEqualToString:self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:NV21 width:width height:height];
+        return [YUVConvertor createImageFromBuffer:data type:NV21 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
     }
     return nil;
+}
+
+- (void)previewYUV {
+    NSData *data = [NSData dataWithContentsOfURL:self.openFilePath];
+    NSUInteger w = [self.inputSettingView getWidth];
+    NSUInteger h = [self.inputSettingView getHeight];
+    if (data.length <= w * h * 4) {
+        //是图片
+        UIImage *image = [self convertYUVToImage:data width:w height:h];
+        self.previewImageView.image = image;
+        self.previewImageView.hidden = NO;
+
+    } else if (data.length > w * h) {
+        //是视频
+    }
 }
 
 @end

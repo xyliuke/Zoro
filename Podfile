@@ -9,6 +9,7 @@ target 'Zoro' do
   pod 'Masonry'
   pod 'YYCategories'
   pod 'LookinServer'
+  pod 'AVBase', :path => './DevPods/', :subsepc => ['YUV']
   # pod 'QMUIKit'
 
   target 'ZoroTests' do
