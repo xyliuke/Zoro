@@ -15,6 +15,9 @@
     }
     label.text = text;
     label.font = [UIFont systemFontOfSize:fontSize];
+    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomMac) {
+        label.showsExpansionTextWhenTruncated = YES;
+    }
     return label;
 }
 
@@ -27,6 +30,9 @@
     }
     label.text = text;
     label.font = [UIFont systemFontOfSize:fontSize];
+    if (UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomMac) {
+        label.showsExpansionTextWhenTruncated = YES;
+    }
     return label;
 }
 

@@ -148,6 +148,7 @@
 - (UILabel *)openFileLabel {
     if (!_openFileLabel) {
         _openFileLabel = [UILabel labelWithText:@"打开文件路径" fontSize:12 textColorName:nil];
+        _openFileLabel.lineBreakMode = NSLineBreakByTruncatingMiddle;
         _openFileLabel.layer.masksToBounds = YES;
         _openFileLabel.layer.cornerRadius = 4;
         _openFileLabel.layer.borderColor = [UIColor colorNamed:@"button_bg_color"].CGColor;
