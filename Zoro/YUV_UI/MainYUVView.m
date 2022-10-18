@@ -18,6 +18,8 @@
 @property (nonatomic, strong) UIButton *openPreviewButton;
 @property (nonatomic, strong) UILabel *openFileLabel;
 @property (nonatomic, strong) NSURL *openFilePath;
+@property (nonatomic, strong) UIButton *editButton;
+
 @property (nonatomic, strong) YUVTypeCollectionView *yuvTypeView;
 @property (nonatomic, strong) YUVTypeData *selectedYUVType;
 @property (nonatomic, strong) YUVSettingView *inputSettingView;
@@ -79,6 +81,14 @@
         make.height.equalTo(@24);
         make.bottom.equalTo(self.settingView).offset(-8);
     }];
+    [self.settingView addSubview:self.editButton];
+    [self.editButton mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.left.equalTo(self.openPreviewButton.mas_right).offset(16);
+        make.width.equalTo(@100);
+        make.height.equalTo(@24);
+        make.centerY.equalTo(self.openPreviewButton);
+    }];
+    
 
     [self.settingView addSubview:self.yuvTypeView];
     [self.yuvTypeView mas_makeConstraints:^(MASConstraintMaker *make) {
@@ -155,6 +165,22 @@
         _openFileLabel.layer.borderWidth = 0.5;
     }
     return _openFileLabel;
+}
+
+- (UIButton *)editButton {
+    if (!_editButton) {
+        @weakify(self)
+        _editButton = [UIButton buttonWithText:@"编辑" fontSize:14 textColorName:nil event:^(UIButton *sender) {
+            @strongify(self)
+//            UIWindowScene *scene = [UIWindowScene new];
+//            scene.
+//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
+//            if (self.delegate) {
+//                [self.delegate detailPresentViewController:alert animated:YES completion:nil];
+//            }
+        }];
+    }
+    return _editButton;
 }
 
 - (UIButton *)openPreviewButton {

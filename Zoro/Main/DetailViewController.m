@@ -35,11 +35,11 @@
     }
 }
 
-- (void)_pushViewController:(UIViewController *)viewController animated:(BOOL)animated {
-
+- (void)detailPushViewController:(UIViewController *)viewController animated:(BOOL)animated {
+    [self.navigationController pushViewController:viewController animated:animated];
 }
 
-- (void)_presentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
+- (void)detailPresentViewController:(UIViewController *)viewControllerToPresent animated:(BOOL)flag completion:(void (^)(void))completion {
     [self presentViewController:viewControllerToPresent animated:flag completion:completion];
 }
 

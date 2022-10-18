@@ -133,6 +133,7 @@
 - (UITextField *)widthView {
     if (!_widthView) {
         _widthView = [UITextField new];
+        _widthView.text = @"0";
         _widthView.textAlignment = NSTextAlignmentRight;
         _widthView.keyboardType = UIKeyboardTypeNamePhonePad;
         _widthView.layer.masksToBounds = YES;
@@ -146,6 +147,7 @@
 - (UITextField *)heightView {
     if (!_heightView) {
         _heightView = [UITextField new];
+        _heightView.text = @"0";
         _heightView.textAlignment = NSTextAlignmentRight;
         _heightView.layer.masksToBounds = YES;
         _heightView.layer.cornerRadius = 4;

@@ -20,6 +20,16 @@
     // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
     // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
     // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
+#if TARGET_OS_MACCATALYST
+    UIWindowScene *windowScene  = (UIWindowScene *)scene;
+    UITitlebar *titlebar = windowScene.titlebar;
+    // 不要显示窗口工具栏的标题
+    titlebar.titleVisibility = UITitlebarTitleVisibilityHidden;
+    // 不要显示窗口顶部的工具栏，需隐藏窗口工具栏的标题才能生效
+    titlebar.toolbar.visible = NO;
+#endif
+
+    
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.windowScene = (UIWindowScene*)scene;
     UINavigationController *rootNavgationController = [[UINavigationController alloc] initWithRootViewController:[ViewController new]];

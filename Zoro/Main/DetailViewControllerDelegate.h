@@ -12,6 +12,6 @@
 @end
 
 @protocol DetailViewControllerDelegate <NSObject>
-- (void)_pushViewController:(nullable UIViewController *)viewController animated:(BOOL)animated;
-- (void)_presentViewController:(nullable UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;
+- (void)detailPushViewController:(nullable UIViewController *)viewController animated:(BOOL)animated;
+- (void)detailPresentViewController:(nullable UIViewController *)viewControllerToPresent animated: (BOOL)flag completion:(void (^ __nullable)(void))completion;
 @end
