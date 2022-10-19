@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F182AC5290055F200AF89D2 /* YUVPreviewView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F182AC4290055F200AF89D2 /* YUVPreviewView.m */; };
 		1F93E9BB28EB24130059A182 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9BA28EB24130059A182 /* AppDelegate.m */; };
 		1F93E9BE28EB24130059A182 /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9BD28EB24130059A182 /* SceneDelegate.m */; };
 		1F93E9C128EB24130059A182 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9C028EB24130059A182 /* ViewController.m */; };
@@ -49,6 +50,8 @@
 
 /* Begin PBXFileReference section */
 		05EB4E81801F165D58726120 /* Pods-Zoro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro.debug.xcconfig"; path = "Target Support Files/Pods-Zoro/Pods-Zoro.debug.xcconfig"; sourceTree = "<group>"; };
+		1F182AC3290055F200AF89D2 /* YUVPreviewView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = YUVPreviewView.h; sourceTree = "<group>"; };
+		1F182AC4290055F200AF89D2 /* YUVPreviewView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YUVPreviewView.m; sourceTree = "<group>"; };
 		1F93E9B628EB24130059A182 /* Zoro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Zoro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F93E9B928EB24130059A182 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		1F93E9BA28EB24130059A182 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -224,6 +227,8 @@
 				62369503071143E9BF39B6B6 /* YUVTypeCollectionView.h */,
 				62369CE9A4AF57F29E7C5C52 /* YUVSettingView.m */,
 				623690B6713D16856122F497 /* YUVSettingView.h */,
+				1F182AC3290055F200AF89D2 /* YUVPreviewView.h */,
+				1F182AC4290055F200AF89D2 /* YUVPreviewView.m */,
 			);
 			path = YUV_UI;
 			sourceTree = "<group>";
@@ -477,6 +482,7 @@
 				623693DDFBF83C170632E971 /* NavigationViewController.m in Sources */,
 				62369DD0F30F9FA6811DCA3C /* DetailViewController.m in Sources */,
 				6236979D92CB8BFA4B4FF318 /* MacOpenPanel.m in Sources */,
+				1F182AC5290055F200AF89D2 /* YUVPreviewView.m in Sources */,
 				62369799C5B387CA16E3FCC6 /* UILabel+Simple.m in Sources */,
 				62369A52076A3D888AC1F439 /* UIButton+Simple.m in Sources */,
 				623692843437B3B6C3632D1F /* MainYUVView.m in Sources */,

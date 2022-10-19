@@ -10,7 +10,8 @@
 #import "YUVTypeCollectionView.h"
 #import "YUVSettingView.h"
 #import <AVBase/YUVConvertor.h>
-#include <YYCategories/YYCategories.h>
+#import <YYCategories/YYCategories.h>
+#import "YUVPreviewView.h"
 
 @interface MainYUVView()
 @property (nonatomic, strong) UIView *settingView;
@@ -25,7 +26,7 @@
 @property (nonatomic, strong) YUVSettingView *inputSettingView;
 
 @property (nonatomic, strong) UIView *previewView;
-@property (nonatomic, strong) UIImageView *previewImageView;
+@property (nonatomic, strong) YUVPreviewView *previewImageView;
 
 @property (nonatomic) BOOL enableY;
 @property (nonatomic) BOOL enableU;
@@ -121,7 +122,6 @@
     [self.previewImageView mas_makeConstraints:^(MASConstraintMaker *make) {
         make.edges.equalTo(self.previewView);
     }];
-    self.previewImageView.hidden = YES;
 }
 
 - (UIView *)settingView {
@@ -253,10 +253,9 @@
     return _previewView;
 }
 
-- (UIImageView *)previewImageView {
+- (YUVPreviewView *)previewImageView {
     if (!_previewImageView) {
-        _previewImageView = [UIImageView new];
-        _previewImageView.contentMode = UIViewContentModeScaleAspectFit;
+        _previewImageView = [YUVPreviewView new];
     }
     return _previewImageView;
 }
@@ -279,9 +278,9 @@
     if (data.length <= w * h * 4) {
         //是图片
         UIImage *image = [self convertYUVToImage:data width:w height:h];
-        self.previewImageView.image = image;
-        self.previewImageView.hidden = NO;
-
+        if (image) {
+            self.previewImageView.images = @[image];
+        }
     } else if (data.length > w * h) {
         //是视频
     }
