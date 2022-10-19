@@ -17,8 +17,6 @@
 		1F93E9D928EB24140059A182 /* ZoroTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9D828EB24140059A182 /* ZoroTests.m */; };
 		1F93E9E328EB24140059A182 /* ZoroUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E228EB24140059A182 /* ZoroUITests.m */; };
 		1F93E9E528EB24140059A182 /* ZoroUITestsLaunchTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1F93E9E428EB24140059A182 /* ZoroUITestsLaunchTests.m */; };
-		2D3D3404B70EA0A7D7CE4CB0 /* Pods_Zoro.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */; };
-		3A306DEFDF1CB8A9E32F450A /* Pods_ZoroTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */; };
 		623692843437B3B6C3632D1F /* MainYUVView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369233A6688CAC1E5FE3DD /* MainYUVView.m */; };
 		623693DDFBF83C170632E971 /* NavigationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369497B2872BA9FA7B7A0E /* NavigationViewController.m */; };
 		62369799C5B387CA16E3FCC6 /* UILabel+Simple.m in Sources */ = {isa = PBXBuildFile; fileRef = 623690F9F7917EAD7DD34251 /* UILabel+Simple.m */; };
@@ -27,7 +25,9 @@
 		62369D2E077BD9F3B94EA94D /* YUVSettingView.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369CE9A4AF57F29E7C5C52 /* YUVSettingView.m */; };
 		62369DC01F7C7FDCF59942EC /* YUVTypeCollectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 623694D3C92877366411907E /* YUVTypeCollectionView.m */; };
 		62369DD0F30F9FA6811DCA3C /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 62369F2FEBCD9C53B0C2EB33 /* DetailViewController.m */; };
-		CB268C8B9C0368C1078AC98E /* Pods_Zoro_ZoroUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */; };
+		CCD974F9F0A48AFE8636BDFA /* libPods-ZoroTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E5834EB7338712A2D353F142 /* libPods-ZoroTests.a */; };
+		E3BE6922BE4B382CD47EF224 /* libPods-Zoro-ZoroUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B14E9AE08B945CC3795186CB /* libPods-Zoro-ZoroUITests.a */; };
+		EBFFF4EAF066C1151C2258EC /* libPods-Zoro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C50C5C4AD944DAFDAE9CE990 /* libPods-Zoro.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,11 +86,11 @@
 		62369F2FEBCD9C53B0C2EB33 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 		930BD62A7537E21C7A80A757 /* Pods-ZoroTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoroTests.release.xcconfig"; path = "Target Support Files/Pods-ZoroTests/Pods-ZoroTests.release.xcconfig"; sourceTree = "<group>"; };
 		992F6FA9916A004A0EF36402 /* Pods-Zoro-ZoroUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro-ZoroUITests.release.xcconfig"; path = "Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests.release.xcconfig"; sourceTree = "<group>"; };
-		AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoro.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B14E9AE08B945CC3795186CB /* libPods-Zoro-ZoroUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zoro-ZoroUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C150C65FC43485D9A6A470C2 /* Pods-ZoroTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZoroTests.debug.xcconfig"; path = "Target Support Files/Pods-ZoroTests/Pods-ZoroTests.debug.xcconfig"; sourceTree = "<group>"; };
+		C50C5C4AD944DAFDAE9CE990 /* libPods-Zoro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-Zoro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7457AEBC26673EBD41491D3 /* Pods-Zoro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro.release.xcconfig"; path = "Target Support Files/Pods-Zoro/Pods-Zoro.release.xcconfig"; sourceTree = "<group>"; };
-		E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZoroTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Zoro_ZoroUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E5834EB7338712A2D353F142 /* libPods-ZoroTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ZoroTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6FDE0F39952BD434A27FA79 /* Pods-Zoro-ZoroUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Zoro-ZoroUITests.debug.xcconfig"; path = "Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -99,7 +99,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2D3D3404B70EA0A7D7CE4CB0 /* Pods_Zoro.framework in Frameworks */,
+				EBFFF4EAF066C1151C2258EC /* libPods-Zoro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A306DEFDF1CB8A9E32F450A /* Pods_ZoroTests.framework in Frameworks */,
+				CCD974F9F0A48AFE8636BDFA /* libPods-ZoroTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,7 +115,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB268C8B9C0368C1078AC98E /* Pods_Zoro_ZoroUITests.framework in Frameworks */,
+				E3BE6922BE4B382CD47EF224 /* libPods-Zoro-ZoroUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -125,9 +125,9 @@
 		0A2AA06596C0F39C8AF25A98 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				AD69B8A9678AE4C3C86BDA34 /* Pods_Zoro.framework */,
-				E5BDB7CD62978A9FB38A5A74 /* Pods_Zoro_ZoroUITests.framework */,
-				E35398C6DD1DE84252A466AC /* Pods_ZoroTests.framework */,
+				C50C5C4AD944DAFDAE9CE990 /* libPods-Zoro.a */,
+				B14E9AE08B945CC3795186CB /* libPods-Zoro-ZoroUITests.a */,
+				E5834EB7338712A2D353F142 /* libPods-ZoroTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -279,7 +279,6 @@
 				1F93E9B228EB24130059A182 /* Sources */,
 				1F93E9B328EB24130059A182 /* Frameworks */,
 				1F93E9B428EB24130059A182 /* Resources */,
-				D4209BF2D6AADA9AE3BBE0E4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -317,7 +316,6 @@
 				1F93E9DA28EB24140059A182 /* Sources */,
 				1F93E9DB28EB24140059A182 /* Frameworks */,
 				1F93E9DC28EB24140059A182 /* Resources */,
-				C4B983458F68384390E92FA4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -462,40 +460,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C4B983458F68384390E92FA4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoro-ZoroUITests/Pods-Zoro-ZoroUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D4209BF2D6AADA9AE3BBE0E4 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Zoro/Pods-Zoro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -691,7 +655,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -723,7 +687,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = "";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

@@ -172,6 +172,10 @@
         @weakify(self)
         _editButton = [UIButton buttonWithText:@"编辑" fontSize:14 textColorName:nil event:^(UIButton *sender) {
             @strongify(self)
+            // [[UIApplication sharedApplication] requestSceneSessionActivation:nil userActivity:nil options:nil errorHandler:nil];
+//            UIApplication.shared.requestSceneSessionActivation(nil, userActivity: nil, options: nil) { error in
+                    // handle errors
+//                }
 //            UIWindowScene *scene = [UIWindowScene new];
 //            scene.
 //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"" message:@"msg" preferredStyle:UIAlertControllerStyleAlert];
