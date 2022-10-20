@@ -213,6 +213,8 @@ static uint32_t bitmapInfoWithPixelFormatTypeTTLive(OSType inputPixelFormat, boo
             data.image = image;
             data.data = subData;
             data.type = type;
+            data.width = width;
+            data.height = height;
             [images addObject:data];
         }
     }

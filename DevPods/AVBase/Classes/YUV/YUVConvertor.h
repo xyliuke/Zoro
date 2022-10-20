@@ -17,6 +17,8 @@ typedef NS_ENUM(NSUInteger, YUV_TYPE){
 @property (nonatomic, strong) UIImage *image;
 @property (nonatomic, strong) NSData *data;
 @property (nonatomic) YUV_TYPE type;
+@property (nonatomic) NSUInteger width;
+@property (nonatomic) NSUInteger height;
 @end
 
 @interface YUVConvertor : NSObject

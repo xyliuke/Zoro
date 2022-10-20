@@ -15,9 +15,6 @@
 @property (nonatomic, strong) UITextField *widthView;
 @property (nonatomic, strong) UILabel *heightLabel;
 @property (nonatomic, strong) UITextField *heightView;
-@property (nonatomic, strong) UISwitch *ySwitch;//Y分量是否可用
-@property (nonatomic, strong) UISwitch *uSwitch;
-@property (nonatomic, strong) UISwitch *vSwitch;
 @end
 
 @implementation YUVSettingView {
@@ -74,35 +71,7 @@
         make.height.equalTo(@24);
     }];
 
-    UIView *yuvView = [UIView new];
-    [self addSubview:yuvView];
-    [yuvView mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self).offset(16);
-        make.width.equalTo(@150);
-        make.top.equalTo(self.widthView.mas_bottom).offset(8);
-        make.height.equalTo(@24);
-    }];
-
-    [yuvView addSubview:self.ySwitch];
-    [yuvView addSubview:self.uSwitch];
-    [yuvView addSubview:self.vSwitch];
-    [self.ySwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(yuvView);
-        make.centerY.equalTo(yuvView);
-    }];
-
-    [self.uSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.ySwitch.mas_right);
-        make.centerY.equalTo(yuvView);
-        make.width.equalTo(self.ySwitch);
-    }];
-
-    [self.vSwitch mas_makeConstraints:^(MASConstraintMaker *make) {
-        make.left.equalTo(self.uSwitch.mas_right);
-        make.centerY.equalTo(yuvView);
-        make.width.equalTo(self.uSwitch);
-        make.right.equalTo(yuvView);
-    }];
+    
 }
 
 - (UIView *)inputWrapView {
@@ -157,59 +126,7 @@
     return _heightView;
 }
 
-- (UISwitch *)ySwitch {
-    if (!_ySwitch) {
-        _ySwitch = [UISwitch new];
-        _ySwitch.title = @"Y";
-        _ySwitch.on = YES;
-        _ySwitch.preferredStyle = UISwitchStyleCheckbox;
-        @weakify(self)
-        [_ySwitch addBlockForControlEvents:UIControlEventValueChanged block:^(id sender) {
-            @strongify(self)
-            if (self.yuvPartChanged) {
-                UISwitch *aSwitch = (UISwitch *)sender;
-                self.yuvPartChanged(self, aSwitch.on, self.uSwitch.on, self.vSwitch.on);
-            }
-        }];
-    }
-    return _ySwitch;
-}
 
-- (UISwitch *)uSwitch {
-    if (!_uSwitch) {
-        _uSwitch = [UISwitch new];
-        _uSwitch.title = @"U";
-        _uSwitch.on = YES;
-        _uSwitch.preferredStyle = UISwitchStyleCheckbox;
-        @weakify(self)
-        [_uSwitch addBlockForControlEvents:UIControlEventValueChanged block:^(id sender) {
-            @strongify(self)
-            if (self.yuvPartChanged) {
-                UISwitch *aSwitch = (UISwitch *)sender;
-                self.yuvPartChanged(self, self.ySwitch.on, aSwitch.on, self.vSwitch.on);
-            }
-        }];
-    }
-    return _uSwitch;
-}
-
-- (UISwitch *)vSwitch {
-    if (!_vSwitch) {
-        _vSwitch = [UISwitch new];
-        _vSwitch.on = YES;
-        _vSwitch.title = @"V";
-        _vSwitch.preferredStyle = UISwitchStyleCheckbox;
-        @weakify(self)
-        [_vSwitch addBlockForControlEvents:UIControlEventValueChanged block:^(id sender) {
-            @strongify(self)
-            if (self.yuvPartChanged) {
-                UISwitch *aSwitch = (UISwitch *)sender;
-                self.yuvPartChanged(self, self.ySwitch.on, self.uSwitch.on, aSwitch.on);
-            }
-        }];
-    }
-    return _vSwitch;
-}
 
 
 @end

@@ -28,9 +28,6 @@
 @property (nonatomic, strong) UIView *previewView;
 @property (nonatomic, strong) YUVPreviewView *previewImageView;
 
-@property (nonatomic) BOOL enableY;
-@property (nonatomic) BOOL enableU;
-@property (nonatomic) BOOL enableV;
 @end
 
 @implementation MainYUVView {
@@ -40,9 +37,6 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:frame];
     if (self) {
-        self.enableY = YES;
-        self.enableU = YES;
-        self.enableV = YES;
         [self setupUI];
     }
 
@@ -232,14 +226,6 @@
 - (YUVSettingView *)inputSettingView {
     if (!_inputSettingView) {
         _inputSettingView = [YUVSettingView new];
-        @weakify(self)
-        _inputSettingView.yuvPartChanged = ^(YUVSettingView *view, BOOL y, BOOL u, BOOL v) {
-            @strongify(self)
-            self.enableY = y;
-            self.enableU = u;
-            self.enableV = v;
-            [self previewYUV];
-        };
     }
     return _inputSettingView;
 }
