@@ -13,6 +13,11 @@ typedef NS_ENUM(NSUInteger, YUV_TYPE){
     NV21
 };
 
+@interface YUVImageData : NSObject
+@property (nonatomic, strong) UIImage *image;
+@property (nonatomic, strong) NSData *data;
+@property (nonatomic) YUV_TYPE type;
+@end
 
 @interface YUVConvertor : NSObject
 + (NSData *)yuvToNV12:(NSData *)data type:(YUV_TYPE)type;
@@ -21,6 +26,8 @@ typedef NS_ENUM(NSUInteger, YUV_TYPE){
 + (CVPixelBufferRef)pixelBufferFromImage:(UIImage *)image;
 + (UIImage *)createImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height;
 + (UIImage *)createImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height enableY:(BOOL)enableY enableU:(BOOL)enableU enableV:(BOOL)enableV;
++ (NSArray<UIImage*> *)createMultiImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height;
++ (NSArray<YUVImageData*> *)createMultiImageDataFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height;
 + (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height;
 + (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height enableY:(BOOL)enableY enableU:(BOOL)enableU enableV:(BOOL)enableV;
 + (CVPixelBufferRef)createCVPixelBufferRefFromNV12Buffer:(unsigned char *)buffer width:(NSUInteger)width height:(NSUInteger)height;

@@ -5,6 +5,10 @@
 #import <UIKit/UIKit.h>
 #import "YUVConvertor.h"
 
+@implementation YUVImageData
+
+@end
+
 @implementation YUVConvertor {
 
 }
@@ -156,6 +160,63 @@ static uint32_t bitmapInfoWithPixelFormatTypeTTLive(OSType inputPixelFormat, boo
     UIImage *image = [self imageFromPixelBuffer:pixelBuffer];
     CVPixelBufferRelease(pixelBuffer);
     return image;
+}
+
++ (NSArray<UIImage *> *)createMultiImageFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height {
+    NSUInteger sizePerFrame = 0;
+    switch (type) {
+        case I420:
+            sizePerFrame = width * height * 1.5;
+            break;
+        case NV12:
+            sizePerFrame = width * height * 1.5;
+            break;
+        case NV21:
+            sizePerFrame = width * height * 1.5;
+            break;
+        default:
+            break;
+    }
+    NSUInteger frames = buffer.length / sizePerFrame;
+    NSMutableArray *images = [NSMutableArray new];
+    for (NSUInteger frame = 0; frame < frames; frame ++) {
+        UIImage *image = [self createImageFromBuffer:[buffer subdataWithRange:NSMakeRange(frame * sizePerFrame, sizePerFrame)] type:type width:width height:height];
+        if (image) {
+            [images addObject:image];
+        }
+    }
+    return images;
+}
+
++ (NSArray<YUVImageData *> *)createMultiImageDataFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height {
+    NSUInteger sizePerFrame = 0;
+    switch (type) {
+        case I420:
+            sizePerFrame = width * height * 1.5;
+            break;
+        case NV12:
+            sizePerFrame = width * height * 1.5;
+            break;
+        case NV21:
+            sizePerFrame = width * height * 1.5;
+            break;
+        default:
+            break;
+    }
+    NSUInteger frames = buffer.length / sizePerFrame;
+    NSMutableArray *images = [NSMutableArray new];
+    for (NSUInteger frame = 0; frame < frames; frame ++) {
+        NSData *subData = [buffer subdataWithRange:NSMakeRange(frame * sizePerFrame, sizePerFrame)];
+        UIImage *image = [self createImageFromBuffer:subData type:type width:width height:height];
+        if (image) {
+            YUVImageData *data = [YUVImageData new];
+            data.image = image;
+            data.data = subData;
+            data.type = type;
+            [images addObject:data];
+        }
+    }
+    return images;
 }
 
 + (CVPixelBufferRef)createCVPixelBufferRefFromBuffer:(NSData *)buffer type:(YUV_TYPE)type width:(NSUInteger)width height:(NSUInteger)height {

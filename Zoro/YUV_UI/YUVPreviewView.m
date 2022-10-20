@@ -7,10 +7,12 @@
 
 #import "YUVPreviewView.h"
 #import <Masonry/Masonry.h>
-
+#import "UILabel+Simple.h"
+#import <AVBase/YUVConvertor.h>
 
 @interface YUVFrameCollectionViewCell : UICollectionViewCell
 @property (nonatomic, strong) UIImageView *imageView;
+@property (nonatomic, strong) UILabel *numLabel;
 @end
 
 @implementation YUVFrameCollectionViewCell
@@ -23,10 +25,33 @@
         [self.imageView mas_makeConstraints:^(MASConstraintMaker *make) {
             make.edges.equalTo(self.contentView);
         }];
+        
+        self.numLabel = [UILabel labelWithText:@"" fontSize:14];
+        self.numLabel.layer.masksToBounds = YES;
+        self.numLabel.layer.cornerRadius = 4;
+        self.numLabel.textAlignment = NSTextAlignmentCenter;
+        self.numLabel.backgroundColor = [UIColor colorWithRed:0.1 green:0.1 blue:0.1 alpha:0.5];
+        [self.imageView addSubview:self.numLabel];
+        [self.numLabel mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.centerX.equalTo(self.imageView);
+            make.bottom.equalTo(self.imageView.mas_bottom).offset(-8);
+            make.height.equalTo(@24);
+            make.width.equalTo(@36);
+        }];
     }
     return self;
 }
-
+- (void)setSelected:(BOOL)selected {
+    [super setSelected:selected];
+    if (selected) {
+        self.imageView.layer.borderColor = UIColor.redColor.CGColor;
+        self.imageView.layer.borderWidth = 1;
+    } else {
+        self.imageView.layer.borderColor = nil;
+        self.imageView.layer.borderWidth = 0;
+    }
+    
+}
 @end
 
 @interface YUVPreviewView()<UICollectionViewDelegate, UICollectionViewDataSource>
@@ -38,6 +63,7 @@
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
+        self.showNum = YES;
         [self setupUI];
     }
     return self;
@@ -45,8 +71,9 @@
 
 - (void)show:(NSUInteger)index {
     if (index < self.images.count) {
-        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathWithIndex:index] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
-        self.imageView.image = self.images[index];
+//        [self.collectionView scrollToItemAtIndexPath:[NSIndexPath indexPathWithIndex:index] atScrollPosition:UICollectionViewScrollPositionCenteredVertically animated:YES];
+        [self.collectionView selectItemAtIndexPath:[NSIndexPath indexPathWithIndex:index] animated:YES scrollPosition:UICollectionViewScrollPositionCenteredVertically];
+        self.imageView.image = self.images[index].image;
     }
 }
 
@@ -68,10 +95,10 @@
     }];
 }
 
-- (void)setImages:(NSArray<UIImage *> *)images {
+- (void)setImages:(NSArray<YUVImageData *> *)images {
     _images = images;
     [self.collectionView reloadData];
-    self.imageView.image = images.firstObject;
+    self.imageView.image = images.firstObject.image;
 }
 
 - (UIImageView *)imageView {
@@ -88,17 +115,23 @@
         layout.itemSize = CGSizeMake(120, 80);
         layout.minimumLineSpacing = 10;
         layout.minimumInteritemSpacing = 0;
+        layout.scrollDirection = UICollectionViewScrollDirectionHorizontal;
         _collectionView = [[UICollectionView alloc]initWithFrame:CGRectZero collectionViewLayout:layout];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         [_collectionView registerClass:YUVFrameCollectionViewCell.class forCellWithReuseIdentifier:@"cell"];
+        _collectionView.showsHorizontalScrollIndicator = YES;
     }
     return _collectionView;
 }
 
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath {
     YUVFrameCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"cell" forIndexPath:indexPath];
-    cell.imageView.image = self.images[indexPath.row];
+    cell.imageView.image = self.images[indexPath.row].image;
+    if (self.showNum) {
+        cell.numLabel.text = [NSString stringWithFormat:@"%ld", indexPath.row];
+    }
+    cell.numLabel.hidden = !self.showNum;
     return cell;
 }
 
@@ -107,7 +140,7 @@
 }
 
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
-    self.imageView.image = self.images[indexPath.row];
+    self.imageView.image = self.images[indexPath.row].image;
 }
 
 @end

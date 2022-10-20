@@ -260,30 +260,32 @@
     return _previewImageView;
 }
 
-- (UIImage *)convertYUVToImage:(NSData *)data width:(NSUInteger)width height:(NSUInteger)height {
+- (void)convertYUVToImage:(NSData *)data width:(NSUInteger)width height:(NSUInteger)height callback:(void(^)(NSArray<YUVImageData*> *imageDatas))callback {
+    YUV_TYPE type = I420;
     if ([@"i420" isEqualToString: self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:I420 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
+        type = I420;
     } else if ([@"NV12" isEqualToString:self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:NV12 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
+        type = NV12;
     } else if ([@"NV21" isEqualToString:self.selectedYUVType.tag]) {
-        return [YUVConvertor createImageFromBuffer:data type:NV21 width:width height:height enableY:self.enableY enableU:self.enableU enableV:self.enableV];
+        type = NV21;
     }
-    return nil;
+    if (callback) {
+        dispatch_async(dispatch_get_global_queue(0, 0), ^{
+            NSArray *array = [YUVConvertor createMultiImageDataFromBuffer:data type:type width:width height:height];
+            dispatch_async_on_main_queue(^{
+                callback(array);
+            });
+        });
+    }
 }
 
 - (void)previewYUV {
     NSData *data = [NSData dataWithContentsOfURL:self.openFilePath];
     NSUInteger w = [self.inputSettingView getWidth];
     NSUInteger h = [self.inputSettingView getHeight];
-    if (data.length <= w * h * 4) {
-        //是图片
-        UIImage *image = [self convertYUVToImage:data width:w height:h];
-        if (image) {
-            self.previewImageView.images = @[image];
-        }
-    } else if (data.length > w * h) {
-        //是视频
-    }
+    [self convertYUVToImage:data width:w height:h callback:^(NSArray<YUVImageData *> *imageDatas) {
+        self.previewImageView.images = imageDatas;
+    }];
 }
 
 @end
